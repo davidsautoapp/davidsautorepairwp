@@ -1,11 +1,14 @@
 <?php
 // echo get_template_directory_uri();
 add_action('wp_enqueue_scripts', function() {
-  wp_enqueue_style('main', get_template_directory_uri() . '/css/main.css'); 
-  wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css');
-  wp_enqueue_style('animate-style', get_template_directory_uri() . '/css/animate.min.css');
-  wp_enqueue_style('prettyPhoto', get_template_directory_uri() . '/css/prettyPhoto.css');
+  wp_enqueue_style('bootstrap-css', get_template_directory_uri() . '/css/bootstrap.min.css');
+  wp_enqueue_style('font-awesome-css', get_template_directory_uri() . '/css/font-awesome.min.css');
+  wp_enqueue_style('animate-css', get_template_directory_uri() . '/css/animate.min.css');
+  wp_enqueue_style('prettyPhoto-css', get_template_directory_uri() . '/css/prettyPhoto.css');
+  wp_enqueue_style('main-css', get_template_directory_uri() . '/css/main.css'); 
   wp_enqueue_style('responsive', get_template_directory_uri() . '/css/responsive.css');
+  wp_enqueue_style('flaticon-css', get_template_directory_uri() . '/fonts2/flaticon/font/flaticon.css');
+  wp_enqueue_style('icomoon-css', get_template_directory_uri() . '/fonts2/icomoon/style.css');
 
 
   wp_enqueue_script('bootstrap-js'
