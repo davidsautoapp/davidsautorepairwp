@@ -13,16 +13,12 @@ get_header();
         <div class="container">
             <div class="row">
                 <div class="col-sm-8 text-center">
-                    <div class="gmap">
-                        <iframe width='100%' height='100%' id='mapcanvas'
-                          src='https://maps.google.com/maps?q=London,%20United%20Kingdom302%20McGuinness%20blvd,%20Brooklyn,%20NY%2011222&amp;t=&amp;z=10&amp;ie=UTF8&amp;iwloc=&amp;output=embed'
-                          frameborder='0' scrolling='no' marginheight='0' marginwidth='0'>
-                          <div class="zxos8_gm"><a href="https://sites.google.com/site/xenoncharles/samsung-galaxy-deals">galaxy</a></div>
-                          <div style='overflow:hidden;'>
-                            <div id='gmap_canvas' style='height:100%;width:100%;'></div>
-                          </div>
-                          <div><small>Powered by <a href="https://www.embedgooglemap.co.uk">Embed Google Map</a></small></div>
-                        </iframe>
+                    <div class="gmap gmap_canvas">
+                      <iframe scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=490.0666&amp;height=670.0666&amp;hl=en&amp;q=302%20McGuinness%20Boulevard%20Toru%C5%84+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="490.0666" height="670.0666" frameborder="0">
+                      </iframe>
+                      <!-- <a href='https://googlemapembed.com/'>Google Maps Generator</a></div> -->
+                      <!-- <style>.mapouter{position:relative;text-align:right;width:490.0666px;height:670.0666px;}.gmap_canvas {overflow:hidden;background:none!important;width:490.0666px;height:670.0666px;}
+                      </style> -->
                     </div>
                 </div>
 

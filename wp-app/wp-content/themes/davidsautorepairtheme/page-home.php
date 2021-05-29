@@ -4,6 +4,7 @@ require_once('includes/main-slider.php');
 require_once('includes/services-summary.php');
 require_once('includes/services-list-view.php');
 require_once('includes/jobs-display.php');
+require_once('includes/utils.php');
 
 get_header();
 
@@ -66,7 +67,19 @@ $jobs_qy = new WP_Query([
           </div>
           <div class="media-body">
             <h2>Have a question or need a custom quote?</h2>
-            <p>Please give us a call at <a href="tel:+17183834808">(718) 383-4808</a></p>
+            <p>
+              Please give us a call at 
+              <?php if ( have_rows( 'phones', 'option' ) ) : ?>
+                <?php while ( have_rows( 'phones', 'option' ) ) : the_row(); ?>
+                  
+                  <a href="tel:+<?php the_sub_field( 'phone' ); ?>">
+                    <?php echo phone_formater(get_sub_field( 'phone' )); ?>
+                  </a>, 
+                <?php endwhile; ?>
+              <?php else : ?>
+                <?php // no rows found ?>
+              <?php endif; ?>
+            </p>
           </div>
         </div>
       </div>

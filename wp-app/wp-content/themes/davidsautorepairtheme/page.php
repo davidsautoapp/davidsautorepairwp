@@ -1,5 +1,6 @@
 <?php
 require_once('includes/secondary-slider.php');
+require_once('includes/utils.php');
 
 get_header();
 

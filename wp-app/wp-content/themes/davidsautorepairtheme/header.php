@@ -70,11 +70,17 @@
     ?>
 
     <div class="header-contacts container">
-      <a class="header-phone" href="tel:+1-718-383-4808">
-        <span class="fa fa-phone icon"></span>
-        <span class="separator">:</span>
-        <span class="digits">718-383-4808</span>
-      </a>
+      <?php if ( have_rows( 'phones', 'option' ) ) : ?>
+        <?php while ( have_rows( 'phones', 'option' ) ) : the_row(); ?>
+          <a class="header-phone" href="tel:+<?php the_sub_field( 'phone' ); ?>">
+            <span class="fa fa-phone icon"></span>
+            <span class="separator">:</span>
+            <span class="digits"><?php echo phone_formater(get_sub_field( 'phone' )); ?></span>
+          </a>, 
+        <?php endwhile; ?>
+      <?php else : ?>
+        <?php // no rows found ?>
+      <?php endif; ?>
     </div>
     <!--/nav-->
 

@@ -2863,7 +2863,13 @@ shortcodes page css
   margin-left: 15px;
 }
 
-
+.header-phone {
+  margin-top: 400px;
+  padding: 10px;
+  background-color: rgba(255, 255, 0, 0.753);
+  font-weight: bold;
+  border-radius: 10px;
+}
 
 
 
