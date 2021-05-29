@@ -1,6 +1,12 @@
 <?php
 // echo get_template_directory_uri();
 
+if (function_exists('acf_add_options_page')) {
+  acf_add_options_page();
+  acf_add_options_sub_page('Address & Contacts');
+  acf_add_options_sub_page('Web & Social Network Links');
+};
+
 add_action('after_setup_theme', function() {
   add_theme_support('title-tag');
   add_theme_support('menu');
@@ -18,6 +24,11 @@ add_action('wp_enqueue_scripts', function() {
   wp_enqueue_style('icomoon-css', get_template_directory_uri() . '/fonts2/icomoon/style.css');
 
 
+  // wp_enqueue_script('jquery-js'
+  //                               , get_template_directory_uri() . '/js/jquery.js'
+  //                               , null
+  //                               , '1'
+  //                               , true);
   wp_enqueue_script('bootstrap-js'
                                 , get_template_directory_uri() . '/js/bootstrap.min.js'
                                 , ['jquery']
@@ -33,13 +44,18 @@ add_action('wp_enqueue_scripts', function() {
                                 , null
                                 , '1'
                                 , true);
-  wp_enqueue_script('wow.min-js'
-                                , get_template_directory_uri() . '/js/wow.min.js'
+  // wp_enqueue_script('repond-js'
+  //                               , get_template_directory_uri() . '/js/respond.min.js'
+  //                               , null
+  //                               , '1'
+  //                               , true);
+  wp_enqueue_script('main-js'
+                                , get_template_directory_uri() . '/js/main.js'
                                 , null
                                 , '1'
                                 , true);
-  wp_enqueue_script('main-js'
-                                , get_template_directory_uri() . '/js/main.js'
+  wp_enqueue_script('wow.min-js'
+                                , get_template_directory_uri() . '/js/wow.min.js'
                                 , null
                                 , '1'
                                 , true);
@@ -61,3 +77,5 @@ add_filter('nav_menu_css_class', function($classes, $item) {
   };
   return $classes;
 }, 10, 2);
+
+

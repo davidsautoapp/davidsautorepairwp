@@ -98,52 +98,6 @@ secondary_slider($slider_data->posts);
     </div><!--/.container-->
 </section><!--/#feature-->
 
-<section id="bottom">
-  <div class="container wow fadeInDown" data-wow-duration="500ms" data-wow-delay="200ms">
-    <div class="row">
-      <div class="col-md-6 col-sm-6">
-        <div class="widget">
-          <h3>Company</h3>
-          <ul>
-            <li>Email: davidsarbk@gmail.com</li>
-            <li>Tel: 718 383 4808</li>
-            <li>Address: 302 McGuiness Blvd,
-              Greenpoint, New York 11222</li>
-            <li></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6">
-        <div class="widget">
-          <h3>Navigation</h3>
-          <ul>
-            <li><a href="/services.html">About us</a></li>
-            <li><a href="/services.html#services">Services</a></li>
-            <li><a href="/gallery.html">Gallery</a></li>
-            <li><a href="/contact-us.html">Contact us</a></li>
-          </ul>
-        </div>
-      </div>
-      <!--/.col-md-3-->
-
-      <div class="col-md-3 col-sm-6">
-        <div class="widget">
-          <h3>Social Media</h3>
-          <ul>
-            <li><a href="https://www.facebook.com/davidsautorepair1/">FaceBook</a></li>
-            <li><a href="https://www.yelp.com/biz/davids-auto-repair-brooklyn">Yelp</a></li>
-          </ul>
-        </div>
-      </div>
-      <!--/.col-md-3-->
-
-
-    </div>
-  </div>
-</section>
-<!--/#bottom-->
-
 <?php
 
 get_footer();

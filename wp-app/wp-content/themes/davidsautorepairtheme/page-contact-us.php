@@ -1,4 +1,6 @@
 <?php
+require_once('includes/utils.php');
+
 get_header();
 ?>
 
@@ -29,9 +31,25 @@ get_header();
                         <li class="col-sm-12">
                             <address>
                                 <h5>Office</h5>
-                                <p>302 McGuiness Blvd,<br> Greenpoint, New York 11222</p>
-                                <p>Phone: 718-383-4808</p>
-                                <p>Email: Address:davidsarbk@gmail.com</p>
+                                <p><?php the_field( 'locations', 'option' ); ?></p>
+                                <p>Phone(s):
+                                  <?php if ( have_rows( 'phones', 'option' ) ) : ?>
+                                    <?php while ( have_rows( 'phones', 'option' ) ) : the_row(); ?>
+                                    <?php the_sub_field( 'type' ); ?> - <a href="tel:+<?php the_sub_field( 'phone' ); ?>"><?php echo phone_formater(get_sub_field( 'phone' )); ?></a>
+                                    <?php endwhile; ?>
+                                  <?php else : ?>
+                                    <?php // no rows found ?>
+                                  <?php endif; ?>
+                                </p>
+                                <p>Email(s):
+                                  <?php if ( have_rows( 'emails', 'option' ) ) : ?>
+                                    <?php while ( have_rows( 'emails', 'option' ) ) : the_row(); ?>
+                                      <a href="mailto:<?php the_sub_field( 'email' ); ?>"><?php the_sub_field( 'email' ); ?></a>, 
+                                    <?php endwhile; ?>
+                                  <?php else : ?>
+                                    <?php // no rows found ?>
+                                  <?php endif; ?>
+                                </p>
                             </address>
                         </li>
                     </ul>
@@ -84,52 +102,6 @@ get_header();
         </div><!--/.row-->
     </div><!--/.container-->
 </section><!--/#contact-page-->
-
-<section id="bottom">
-  <div class="container wow fadeInDown" data-wow-duration="500ms" data-wow-delay="200ms">
-    <div class="row">
-      <div class="col-md-6 col-sm-6">
-        <div class="widget">
-          <h3>Company</h3>
-          <ul>
-            <li>Email: davidsarbk@gmail.com</li>
-            <li>Tel: 718 383 4808</li>
-            <li>Address: 302 McGuiness Blvd,
-              Greenpoint, New York 11222</li>
-            <li></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6">
-        <div class="widget">
-          <h3>Navigation</h3>
-          <ul>
-            <li><a href="/services.html">About us</a></li>
-            <li><a href="/services.html#services">Services</a></li>
-            <li><a href="/gallery.html">Gallery</a></li>
-            <li><a href="/contact-us.html">Contact us</a></li>
-          </ul>
-        </div>
-      </div>
-      <!--/.col-md-3-->
-
-      <div class="col-md-3 col-sm-6">
-        <div class="widget">
-          <h3>Social Media</h3>
-          <ul>
-            <li><a href="https://www.facebook.com/davidsautorepair1/">FaceBook</a></li>
-            <li><a href="https://www.yelp.com/biz/davids-auto-repair-brooklyn">Yelp</a></li>
-          </ul>
-        </div>
-      </div>
-      <!--/.col-md-3-->
-
-
-    </div>
-  </div>
-</section>
-<!--/#bottom-->
 
 <?php
 get_footer();

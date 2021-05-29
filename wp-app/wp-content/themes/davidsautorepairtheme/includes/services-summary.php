@@ -32,7 +32,7 @@ function services_summary_view($services) {
       </div>
       <!--/.row-->
       <div class="row text-center">
-        <a class="btn-slide wow fadeInDown" href="/services.html#services">Read More</a>
+        <a class="btn-slide wow fadeInDown" href="<?php echo get_site_url() . '/services#services' ?>">Read More</a>
       </div>
     </div>
     <!--/.container-->
