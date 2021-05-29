@@ -5,12 +5,19 @@
           &copy; 2019 - David's Auto Repair
         </div>
         <div class="col-sm-6">
-          <ul class="pull-right">
+          <!-- <ul class="pull-right">
             <li><a href="#">Home</a></li>
             <li><a href="#">About Us</a></li>
             <li><a href="#">Faq</a></li>
             <li><a href="#">Contact Us</a></li>
-          </ul>
+          </ul> -->
+          <?php 
+          wp_nav_menu([
+            'theme_location'  =>  'secondary-menu',
+            'container'       =>  'ul',
+            'menu_class'      =>  'pull-right'
+          ]) 
+          ?>
         </div>
       </div>
     </div>

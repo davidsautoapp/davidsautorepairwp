@@ -44,3 +44,20 @@ add_action('wp_enqueue_scripts', function() {
                                 , '1'
                                 , true);
 });
+
+add_action('init', function() {
+  register_nav_menus([
+    'main-menu' =>  'Main Menu'
+  ]);
+
+  register_nav_menus([
+    'secondary-menu' =>  'Secondary Menu'
+  ]);
+});
+
+add_filter('nav_menu_css_class', function($classes, $item) {
+  if (in_array('current-menu-item', $classes)) {
+    $classes[] = 'active';
+  };
+  return $classes;
+}, 10, 2);

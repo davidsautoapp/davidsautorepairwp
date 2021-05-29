@@ -1,5 +1,5 @@
 <?php
-function services_summary($posts) {
+function services_summary_view($services) {
   ?>
   <section id="feature">
     <div class="container">
@@ -7,20 +7,17 @@ function services_summary($posts) {
         <div class="features">
 
           <?php
-          foreach($posts as $post):
-            // echo "<pre>";
-            // print_r($post->post_title);
-            // echo "</pre>";
+          foreach($services as $service):
             ?>
             
             <div class="col-md-6 col-sm-12 wow fadeInDown" data-wow-duration="500ms" data-wow-delay="200ms">
               <div class="feature-wrap row">
                 <div class="col-sm-2 col-md-3">
-                  <i class="flaticon-voltmeter"></i>
+                  <i class="<?= $service['icon'] ?>"></i>
                 </div>
                 <div class="col-sm-10 col-md-9">
-                  <h2><?php echo $post->post_title ?></h2>
-                  <h3><?php echo $post->post_content ?></h3>
+                  <h2><?= $service['title'] ?></h2>
+                  <h3><?= $service['short_description'] ?></h3>
                 </div>
               </div>
             </div>

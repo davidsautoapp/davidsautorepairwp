@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title><?php wp_title('|', true, 'right') ?></title>
+  <title><?php wp_title('|', true, 'right'); bloginfo('name') ?></title>
 
   <?php wp_head(); ?>
   <!-- core CSS -->
@@ -40,17 +40,35 @@
           </button>
         </div>
 
-        <div class="collapse navbar-collapse navbar-right">
+        <!-- <div class="collapse navbar-collapse navbar-right">
           <ul class="nav navbar-nav">
             <li class="active"><a href="/">Home</a></li>
             <li><a href="services">Services</a></li>
             <li><a href="gallery">Gallery</a></li>
             <li><a href="contact-us">Contact</a></li>
           </ul>
+        </div> -->
+        <div class="collapse navbar-collapse navbar-right">
+          <?php
+          
+          wp_nav_menu([
+            'theme_location'  =>  'main-menu',
+            'container'       =>  'ul',
+            'menu_class'      =>  'nav navbar-nav'
+          ]);
+          ?>
         </div>
       </div>
       <!--/.container-->
     </nav>
+
+    
+
+
+    <?php
+    
+    ?>
+
     <div class="header-contacts container">
       <a class="header-phone" href="tel:+1-718-383-4808">
         <span class="fa fa-phone icon"></span>

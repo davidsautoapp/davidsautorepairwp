@@ -761,8 +761,17 @@ button.navbar-toggle {
 }
 
 .media-heading .feature-wrap i {
-  float: initial;
   border-radius: 100%;
+}
+
+.feature-wrap.center {
+  position: relative;
+  height: 80px;
+}
+
+.feature-wrap.center i {
+  position: absolute;
+  margin-left: -35px;
 }
 
 /* .feature-wrap i {
@@ -2657,6 +2666,12 @@ ul.sidebar-gallery {
 
 .media-body > div {
   padding: 8px 16px;
+}
+
+@media only screen and (min-width: 767px) {
+  .media-body {
+    min-height: 290px !important;
+  }
 }
 
 #comments_title{

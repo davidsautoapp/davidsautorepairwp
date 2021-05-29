@@ -1,5 +1,5 @@
 <?php
-function main_slider($posts) {
+function main_slider_view($posts) {
   $len = count($posts);
   ?>
   
